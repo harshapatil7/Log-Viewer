@@ -1,4 +1,4 @@
-### Log Viewer with WebSocket and Large File Handling
+# Log Viewer with WebSocket and Large File Handling
 
 This project provides a real-time log viewer using WebSocket, which updates clients with new log entries without requiring a page refresh. It is designed to handle large log files efficiently by retrieving only the last few lines from a potentially massive file.
 
@@ -20,13 +20,13 @@ This project provides a real-time log viewer using WebSocket, which updates clie
 
 ## Installation
 
-# Clone the Repository
+### Clone the Repository
 ```
 git clone <repository-url>
 cd <repository-directory>
 ```
 
-# Make sure you have installed the node.js Before starting
+### Make sure you have installed the node.js Before starting
 
 Firstly, install the required npm packages:
 ```
@@ -50,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 In this project, we deal with log files that can grow very large, potentially reaching sizes of up to 10GB. Handling such large files efficiently is crucial to ensure the performance and reliability of the application. We use a combination of techniques to manage and retrieve the last few lines from these large files without significant performance degradation.
 
-# Efficient File Handling with Buffers
+### Efficient File Handling with Buffers
 
 To efficiently handle large log files, we use a buffer-based approach to read only the necessary portions of the file. This method avoids loading the entire file into memory, which would be impractical for very large files.
 
@@ -61,7 +61,7 @@ To efficiently handle large log files, we use a buffer-based approach to read on
   * Implementation:
         - getLastNLogs Function: This function calculates the size of the file and reads a chunk from the end. It processes the chunk to extract the last N lines. This method ensures that we only handle a small portion of the file at any given time, making it efficient for very large files.
 
-# Error Handling
+### Error Handling
 
 Robust error handling is crucial to maintain the stability of the application, especially when dealing with file operations. We have implemented comprehensive error handling mechanisms to manage potential issues.
 
@@ -71,7 +71,7 @@ Robust error handling is crucial to maintain the stability of the application, e
   * Socket.IO Errors:
         - Socket Errors: Errors related to Socket.IO connections are logged, and appropriate error messages are sent to clients to inform them of issues during real-time communication.
 
-# Efficiency
+## Efficiency
 
 The use of buffered reading and processing only the necessary portions of the file ensures that the application remains responsive and performs well, even with very large log files. This approach minimizes memory usage and reduces the time required to fetch the last few lines of the log file.
 
